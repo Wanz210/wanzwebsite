@@ -1,0 +1,103 @@
+/* styles.css - bersih, responsif, cocok untuk tugas */
+:root{
+  --bg:#f5f8ff;
+  --card:#ffffff;
+  --accent1:#7b61ff;
+  --accent2:#6dd3ff;
+  --text:#0b1220;
+  --muted:#6b7280;
+  --container:980px;
+  --radius:12px;
+  font-family: 'Inter', system-ui, -apple-system, "Segoe UI", Roboto, Arial;
+}
+
+*{box-sizing:border-box}
+body{ margin:0; background:var(--bg); color:var(--text); line-height:1.5; -webkit-font-smoothing:antialiased; }
+.container{ max-width:var(--container); margin:0 auto; padding:28px; }
+
+/* header */
+.site-header{ position:sticky; top:0; background:rgba(255,255,255,0.8); backdrop-filter: blur(6px); border-bottom:1px solid rgba(11,18,32,0.04); z-index:50; }
+.header-inner{ display:flex; gap:12px; align-items:center; justify-content:space-between; }
+.brand{ text-decoration:none; color:var(--text); font-weight:700; font-size:1rem; }
+
+/* nav */
+.main-nav ul{ list-style:none; margin:0; padding:0; display:flex; gap:8px; }
+.main-nav a{ text-decoration:none; padding:8px 12px; border-radius:10px; color:var(--muted); font-weight:600; }
+.main-nav a:hover{ color:var(--accent1); transform:translateY(-2px); transition:all .15s; }
+.main-nav a.active{ background:linear-gradient(90deg,var(--accent1),var(--accent2)); color:#fff; }
+
+/* mobile toggle */
+.nav-toggle{ display:none; background:none; border:0; padding:8px; cursor:pointer; }
+.hamburger{ width:22px; height:2px; background:var(--text); position:relative; display:block; }
+.hamburger::before, .hamburger::after{ content:""; position:absolute; left:0; right:0; height:2px; background:var(--text); }
+.hamburger::before{ top:-6px } .hamburger::after{ top:6px }
+
+/* cards & hero */
+.card{ background:var(--card); border-radius:var(--radius); padding:18px; box-shadow:0 8px 20px rgba(11,18,32,0.04); margin-bottom:18px; }
+.hero .lead{ color:var(--muted); margin-top:8px; }
+.hero-actions{ margin-top:12px; display:flex; gap:10px; }
+.btn{ display:inline-block; padding:10px 14px; border-radius:10px; text-decoration:none; font-weight:700; }
+.btn:hover{ transform:translateY(-2px); transition:all .12s; }
+.btn.ghost{ background:transparent; border:1px solid rgba(11,18,32,0.06); color:var(--text); }
+.btn{ background:linear-gradient(90deg,var(--accent1),var(--accent2)); color:#fff; }
+
+/* forms */
+.field{ display:flex; flex-direction:column; gap:6px; margin-bottom:12px; }
+.field input, .field textarea{ padding:10px 12px; border-radius:8px; border:1px solid rgba(11,18,32,0.06); font-size:0.95rem; }
+.field input:focus, .field textarea:focus{ outline:none; box-shadow:0 8px 20px rgba(123,97,255,0.08); border-color: rgba(123,97,255,0.25); }
+
+/* footer */
+.site-footer{ margin-top:18px; padding:14px 0; text-align:center; color:var(--muted); }
+
+/* responsiveness */
+@media (max-width:900px){
+  .container{ padding:18px; }
+}
+@media (max-width:820px){
+  .nav-toggle{ display:block; }
+  .main-nav{ position:fixed; right:-100%; top:64px; width:260px; height:calc(100% - 64px); background:linear-gradient(180deg,#fff,#f7fbff); padding:18px; transition:right .25s ease; box-shadow:-6px 0 18px rgba(11,18,32,0.06); }
+  .main-nav.open{ right:0; }
+  .main-nav ul{ flex-direction:column; gap:10px; }
+}
+@media (max-width:480px){
+  .brand{ font-size:0.95rem; }
+  .btn{ padding:9px 12px; }
+}
+
+/* layout: gambar kiri, teks kanan */
+.profile {
+  display: flex;
+  gap: 20px;
+  align-items: center; /* vertikal align tengah */
+  margin-top: 12px;
+}
+
+/* ukuran & tampilan gambar */
+.profile-img {
+  width: 120px;
+  height: 120px;
+  border-radius: 12px;
+  object-fit: cover;
+  flex-shrink: 0; /* jangan mengecil */
+  box-shadow: 0 6px 18px rgba(16,24,40,0.06);
+  border: 4px solid rgba(255,255,255,0.6);
+}
+
+/* teks profil */
+.profile-info p {
+  margin: 6px 0;
+  color: var(--text); /* atau #000 */
+  font-weight: 500;
+}
+
+/* responsive: pada layar kecil, stack (gambar di atas teks) */
+@media (max-width: 820px) {
+  .profile {
+    flex-direction: column;
+    align-items: flex-start; /* atau center */
+  }
+  .profile-img {
+    margin-bottom: 8px;
+  }
+}
+

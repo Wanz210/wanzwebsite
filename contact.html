@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Contact · Tugas Mandiri 2</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html">Jobsheet · Tugas Mandiri 2</a>
+      <button class="nav-toggle" aria-expanded="false" aria-label="Buka menu">
+        <span class="hamburger"></span>
+      </button>
+      <nav class="main-nav" role="navigation">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html" class="active">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="card contact-card">
+      <h1>Contact & Format Pengumpulan</h1>
+      <p class="lead">Berikut format pengumpulan tugas sesuai jobsheet.</p>
+
+      <h2>Format Pengumpulan Tugas</h2>
+      <p>Mahasiswa diwajibkan mengumpulkan tugas dalam bentuk <strong>video</strong> yang mempresentasikan website yang sudah dikerjakan. Video harus memuat:</p>
+      <ul>
+        <li>Perkenalan diri (nama, NPM, matakuliah).</li>
+        <li>Memperlihatkan tampilan semua halaman website (Home, About, Contact).</li>
+        <li>Menjelaskan isi content dari setiap halaman secara singkat.</li>
+        <li>Perlihatkan perpindahan antar page menggunakan Navigation Menu.</li>
+      </ul>
+
+      <h3>Petunjuk rekaman singkat (durasi 2–5 menit)</h3>
+      <ol>
+        <li>Buka browser, tampilkan Home — jelaskan tujuan & deskripsi tugas (20–30 detik).</li>
+        <li>Klik About — jelaskan profil singkat & teknologi yang dipakai (20–30 detik).</li>
+        <li>Klik Contact — tunjukkan format pengumpulan dan kontak (20–30 detik).</li>
+        <li>Tunjukkan bahwa menu navigasi bekerja (pindah antar halaman).</li>
+        <li>Penutupan: sebutkan kembali nama & ucapkan terima kasih.</li>
+      </ol>
+
+      <h3>Kontak (contoh)</h3>
+      <p>Email: <a href="mailto:emailanda@domain.com">emailanda@domain.com</a><br>HP: 08xx-xxxx-xxxx</p>
+
+      <hr>
+      <p><em>Catatan:</em> Form di bawah hanya demo untuk menunjukkan tampilan — tidak mengirimkan data.</p>
+
+      <form onsubmit="alert('Form demo — tidak mengirim'); return false;">
+        <label class="field"><span>Nama</span><input type="text" name="name" placeholder="Nama lengkap" required></label>
+        <label class="field"><span>Email</span><input type="email" name="email" placeholder="email@domain.com" required></label>
+        <label class="field"><span>Pesan</span><textarea name="message" rows="4" placeholder="Pesan..." required></textarea></label>
+        <div style="display:flex;gap:10px;">
+          <button class="btn" type="submit">Kirim (Demo)</button>
+          <a class="btn ghost" href="mailto:emailanda@domain.com">Email Langsung</a>
+        </div>
+      </form>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>Universitas Musamus Merauke — Program Studi Sistem Informasi</p>
+    </div>
+  </footer>
+
+  <script>
+    const btn = document.querySelector('.nav-toggle');
+    const nav = document.querySelector('.main-nav');
+    btn.addEventListener('click', ()=>{ const exp = btn.getAttribute('aria-expanded')==='true'; btn.setAttribute('aria-expanded',String(!exp)); nav.classList.toggle('open'); });
+  </script>
+</body>
+</html>

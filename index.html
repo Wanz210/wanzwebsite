@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Home · Tugas Mandiri 2</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html">Jobsheet · Tugas Mandiri 2</a>
+      <button class="nav-toggle" aria-expanded="false" aria-label="Buka menu">
+        <span class="hamburger"></span>
+      </button>
+      <nav class="main-nav" role="navigation">
+        <ul>
+          <li><a href="index.html" class="active">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="hero card">
+      <h1>Tugas Mandiri 2</h1>
+      <p class="lead">Buat 3 halaman website statis (Home, About, Contact) dan hubungkan tiap halaman menggunakan navigation menu. Buat tampilan sederhana namun menarik dengan CSS.</p>
+      <div class="hero-actions">
+        <a class="btn" href="about.html">Lihat About</a>
+        <a class="btn ghost" href="contact.html">Petunjuk Pengumpulan</a>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Tujuan</h2>
+      <ul>
+        <li>Mahasiswa dapat membuat website lebih dari 1 halaman dan mempercantik tampilan dengan CSS.</li>
+        <li>Mahasiswa dapat menghubungkan setiap halaman website yang berbeda menggunakan navigation menu.</li>
+      </ul>
+    </section>
+
+    <section class="card">
+      <h2>Deskripsi Tugas</h2>
+      <ol>
+        <li>Mahasiswa membuat <strong>3 halaman Website Statis</strong>:
+          <ul>
+            <li><strong>Home</strong> — halaman utama</li>
+            <li><strong>About</strong> — tentang diri / tugas</li>
+            <li><strong>Contact</strong> — informasi kontak & petunjuk pengumpulan</li>
+          </ul>
+        </li>
+        <li>Buat tampilan dan content website sederhana namun menarik untuk dilihat atau dibaca.</li>
+        <li>Hubungkan setiap page menggunakan <strong>Navigation Menu</strong>.</li>
+      </ol>
+    </section>
+
+    <section class="card">
+      <h2>Catatan teknis singkat</h2>
+      <p>Halaman ini statis (HTML + CSS). JavaScript kecil hanya untuk toggle menu pada perangkat mobile. Anda tidak perlu backend.</p>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>Universitas Musamus Merauke — Program Studi Sistem Informasi</p>
+    </div>
+  </footer>
+
+  <script>
+    // Nav toggle & highlight active link
+    const btn = document.querySelector('.nav-toggle');
+    const nav = document.querySelector('.main-nav');
+    btn.addEventListener('click', () => {
+      const exp = btn.getAttribute('aria-expanded') === 'true';
+      btn.setAttribute('aria-expanded', String(!exp));
+      nav.classList.toggle('open');
+    });
+    // Active link: add .active to matching link
+    document.querySelectorAll('.main-nav a').forEach(a=>{
+      const href = a.getAttribute('href');
+      if (href === location.pathname.split('/').pop() || (href === 'index.html' && (location.pathname === '/' || location.pathname.endsWith('index.html')))) {
+        a.classList.add('active');
+      }
+    });
+  </script>
+</body>
+</html>
